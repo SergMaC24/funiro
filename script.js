@@ -35,17 +35,72 @@ window.onload = function () {
         targetElement.closest(".menu__item").classList.toggle("_hover");
       }
     }
-    if (targetElement.classList.contains('search-form__icon')) {
-      document.querySelector('.search-form').classList.toggle('_active');
-    } else if (!targetElement.closest('.search-form') && document.querySelector('.search-form._active')) {
-      document.querySelector('.search-form').classList.remove('_active');
+    // появление поля поиск
+    if (targetElement.classList.contains("search-form__icon")) {
+      document.querySelector(".search-form").classList.toggle("_active");
+    } else if (
+      !targetElement.closest(".search-form") &&
+      document.querySelector(".search-form._active")
+    ) {
+      document.querySelector(".search-form").classList.remove("_active");
     }
   }
 };
 
-// появление поля поиск
-// const searchForm = document.querySelector(".search-form");
-// searchForm.addEventListener("click", () => {
-//   searchForm.classList.add("_active");
-// });
+// accardeon
 
+const menuItem = Array.from(document.querySelectorAll(".menu__item"));
+
+menuItem.forEach((it) => {
+  it.addEventListener("click", boxHandler);
+});
+
+function boxHandler(e) {
+  e.preventDefault();
+  let currentBox = e.target.closest(".menu__item");
+  let currentContent = e.target.nextElementSibling;
+  currentBox.classList.toggle("_active");
+  if (currentBox.classList.contains("_active")) {
+    currentContent.style.maxHeight = currentContent.scrollHeight + "px";
+  } else {
+    currentContent.style.maxHeight = 0;
+  }
+}
+
+// Burger
+const burger = document.querySelector(".icon-menu");
+const menu = document.querySelector(".menu__body");
+const body = document.body;
+
+if (burger && menu) {
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("_active");
+    menu.classList.toggle("_active");
+    body.classList.toggle("_lock");
+  });
+}
+
+// Swiper
+// if (document.querySelector(".slider-main__body")) {
+  // const swiper1 = new Swiper("slider-main__body", {
+    // Optional parameters
+    // slidesPerView: 1,
+    // spaceBetween: 32,
+    // speed: 800,
+    // direction: "vertical",
+    // loop: true,
+    // parallax: true,
+
+    // If we need pagination
+    // pagination: {
+    //   el: ".controls-slider-main__dotts",
+    //   clickable: true,
+    // },
+
+    // Navigation arrows
+    // navigation: {
+    //   nextEl: ".slider-main .slider-arrow_next",
+    //   prevEl: ".slider-main .swiper-button-prev",
+    // },
+  // });
+// }

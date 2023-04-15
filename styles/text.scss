@@ -28,3 +28,10 @@
 	font-weight: 600;
 	font-display: swap;
 }
+
+._footer-title{
+	font-size: clamp(1.25rem, 1.163rem + 0.43vw, 1.5rem);
+	line-height: 29 / 24 * 100%;
+	color: #000;
+	font-weight: 700;
+}

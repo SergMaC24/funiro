@@ -1,0 +1,146 @@
+@use 'variables' as var;
+
+.page {
+    flex: 1 1 auto;
+    &__main-slider {
+    }
+    &__advantages {
+    }
+}
+.main-slider {
+    background-color: #FCF8F3;
+
+    &__container {
+        position: relative;
+        @media (min-width: var.$md2) {
+            &::before{
+                content: '';
+                position: absolute;
+                background-color: #F9F1E7;
+                top: 0;
+                width: 100vw;
+                right: 376px;
+                height: 100%;
+            }
+        }
+    }
+
+    &__body{
+        padding-top: 140px;
+        position: relative;
+        z-index: 2;
+        @media (max-width: var.$md2) {
+            padding-top: 80px;
+        }
+        @media (max-width: var.$md3) {
+            padding-top: 50px;
+        }
+        @media (min-width: var.$md2) {
+            display: flex;
+        }
+    }
+
+    &__content {
+        flex: 0 0 494/1240 * 100%;
+    }
+
+    &__slider {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+}
+.content-main {
+    position: relative;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.72);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: clamp(0.938rem, -0.041rem + 4.89vw, 3.75rem);
+    padding-bottom: clamp(0.938rem, -0.041rem + 4.89vw, 3.75rem);
+    @media (min-width: var.$md2) {
+        padding: clamp(0.063rem, -1.22rem + 6.41vw, 3.75rem);
+    }
+
+    &__title {
+        font-size: clamp(1.5rem, 0.804rem + 3.48vw, 3.5rem);
+        font-weight: 700;
+        line-height: 120%;
+        &:not(:last-child){
+            margin: 0px 0px 16px/56px * 1em 0px;
+        }
+    }
+
+    &__text {
+        font-size: clamp(1rem, 0.913rem + 0.43vw, 1.25rem);
+        color: var(--gray-color);
+        font-weight: 500;
+        line-height: 150%;
+    }
+
+    &__button {
+        font-weight: 600;
+        min-height: clamp(2.813rem, 2.095rem + 3.59vw, 4.875rem);
+        font-size: clamp(1rem, 0.913rem + 0.43vw, 1.25rem);
+        background-color: var(--orange-color);
+        color: #fff;
+        width: 100%;
+        &:hover{
+            background-color: #c68155;
+        }
+    }
+}
+.slider-main {
+
+    &__controls {
+    }
+
+    &__body {
+    }
+
+    &__slide {
+    }
+
+    &__image {
+    }
+
+    &__content {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+
+    &__price {
+    }
+}
+.controls-slider-main {
+
+    &__dotts {
+    }
+
+    &__arrows {
+    }
+}
+.slider-arrows {
+    display: grid;
+    grid-template-columns: repeat(2, 48px);
+    column-gap: 8px;
+}
+.slider-arrow {
+    border-radius: 50%;
+    height: 48px;
+    background-color: rgba(232, 159, 113, 0.3);
+    color: var(--orange-color);
+    font-size: 12px;
+    cursor: pointer;
+
+}
+
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}

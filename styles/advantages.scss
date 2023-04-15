@@ -1,0 +1,46 @@
+@use 'variables' as var;
+
+.advantages {
+    padding-top: clamp(1.875rem, 0.614rem + 6.3vw, 5.5rem);
+    padding-bottom: clamp(1.875rem, 0.614rem + 6.3vw, 5.5rem);
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item {
+        display: inline-grid;
+        padding: 15px 0;
+        grid-template: auto auto / 85px 1fr;
+        @media (max-width: var.$md2) {
+            min-width: 280px;
+        }
+        @media (max-width: var.$md3) {
+        grid-template: auto auto / auto 1fr;
+        }
+    }
+
+    &__icon {
+        text-align: center;
+        align-self: center;
+        grid-row: span 2;
+        @media (max-width: var.$md3) {
+            padding-right: 15px;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+        margin: 0px 0px 2px/18px * 1em 0px;
+    }
+
+    &__text {
+        line-height: 150%;
+        color: var(--gray-color);
+    }
+}
+
